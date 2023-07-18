@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js" integrity="sha512-E8QSvWZ0eCLGk4km3hxSsNmGWbLtSCSUcewDQPQWZF6pEU8GlT8a5fF32wOl1i8ftdMhssTrF/OhyGWwonTcXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/url-parse@1.4.3/dist/url-parse.min.js"></script>
+    <title>Checking..</title>
+</head>
+<body>
+    <script>
+        const encode = (plainText) => {
+            return CryptoJS.AES.encrypt(plainText, 'mac').toString();
+        }
+        const decode = (encryptText) => {
+            return CryptoJS.AES.decrypt(encryptText, 'mac').toString(CryptoJS.enc.Utf8);
+        }
+
+        var js = {
+            "url" : encode("https://www.google.com"),
+            "headers" : encode(JSON.stringify({
+                "type" : encode("<html></html>"),
+                "response" : encode("jefjhj"),
+            })),
+            "payload" : encode(JSON.stringify({
+                 "id" : encode("8728682")
+            })),
+            "classobject" : encode("https"),
+            "callback" : encode("none"),
+            "timeout" : encode("15000")
+        }
+        
+        console.log(CryptoJS.AES.encrypt(JSON.stringify(js), 'mac').toString());
+    </script>
+</body>
+
+</html>
