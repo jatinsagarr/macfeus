@@ -1,9 +1,13 @@
 # macfeus
+An STB mac Tester App.
 
-A new Flutter project.
+## Live Link
+This is project is live on telegram channel all users are coming from telegram 1k+ subs.
+[https://t.me/s/stbemumacs]
 
+## Backend Is written in Node Js for API's
+ 
 ## Getting Started
-
 This project is a starting point for a Flutter application.
 
 A few resources to get you started if this is your first Flutter project:
